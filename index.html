@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <title>About Blank Game Launcher</title>
+    <meta charset="utf-8">
+    <title>About Blank Launcher</title>
   </head>
-  <body>
-    <p>If nothing happens, <a href="#" onclick="openBlank()">click here</a>.</p>
+  <body style="text-align:center;font-family:sans-serif;margin-top:50px;">
+    <h2>Game Launcher</h2>
+    <button onclick="openBlank()">Launch Game</button>
+
     <script>
       function openBlank() {
-        const win = window.open("about:blank", "_blank");
-        const html = `
+        const newTab = window.open("about:blank", "_blank");
+        const code = `
           <!DOCTYPE html>
           <html>
-            <head><meta charset="utf-8"><title>Loading…</title></head>
-            <body style="margin:0;overflow:hidden">
+            <head><meta charset="utf-8"><title>Game Window</title></head>
+            <body style="margin:0;overflow:hidden;background:#000;">
+              <h2 style='color:white;text-align:center;margin-top:50px;'>Game Loaded Here!</h2>
               <iframe src="https://eaglercraft.com/mc/1.12.2"
                       style="border:none;width:100vw;height:100vh;"></iframe>
             </body>
           </html>`;
-        win.document.write(html);
-        win.document.close();
+        newTab.document.write(code);
+        newTab.document.close();
       }
-      openBlank();
     </script>
   </body>
 </html>
